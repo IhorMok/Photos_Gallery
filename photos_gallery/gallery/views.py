@@ -7,3 +7,7 @@ def index_page(request):
 
 def about(request):
     return render(request, 'gallery/about.html')
+
+
+def register_page(request):
+    return render(request, 'gallery/register_page.html')
