@@ -4,7 +4,8 @@
 <div class="container">
     <div class="row">
         <h2>Create Your Profile</h2>
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post">
+            {% csrf_token %}
             <!-- Text input-->
             <div class="form-group">
                 <label class="control-label col-sm-2" for="textinput">First Name</label>
@@ -54,7 +55,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="singlebutton"> </label>
                 <div class="col-md-4">
-                    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+                    <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit">Submit</button>
                 </div>
             </div>
         </form>
