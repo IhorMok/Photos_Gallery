@@ -68,6 +68,13 @@ bd-placeholder-img {
         }
       }
 
+div .row {
+    padding-top: 30px;
+}
+div .form-horizontal {
+    padding-top: 20px;
+}
+
 /*
  * Dummy devices (replace them with your own or something else entirely!)
  *//*
