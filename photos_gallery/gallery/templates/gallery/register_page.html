@@ -1,4 +1,6 @@
 {% extends "gallery/base.html" %}
+{% block title %} Create an Account {% endblock %}
+
 
 {% block content %}
 <div class="container">
@@ -7,50 +9,52 @@
         <form class="form-horizontal" method="post">
             {% csrf_token %}
             <!-- Text input-->
+
+
             <div class="form-group">
                 <label class="control-label col-sm-2" for="textinput">First Name</label>
                 <div class="col-md-4">
-                    <input id="textinput" name="textinput" placeholder="Insert your First Name"
-                           class="form-control input-md" required="" type="text">
+                    {{ form.first_name}}
                     <span class="help-block"> </span>
                 </div>
             </div>
-            <!-- Text input-->
+
+
             <div class="form-group">
-                <label class="col-md-4 control-label" for="textinput">Last Name</label>
+                <label class="control-label col-sm-2" for="textinput">Last Name</label>
                 <div class="col-md-4">
-                    <input id="textinput" name="textinput" placeholder="Insert your Last Name"
-                           class="form-control input-md" required="" type="text">
+                    {{ form.last_name}}
                     <span class="help-block"> </span>
                 </div>
             </div>
-            <!-- Text input-->
+
+
             <div class="form-group">
-                <label class="col-md-4 control-label" for="textinput">Email</label>
+                <label class="control-label col-sm-2" for="textinput">Email</label>
                 <div class="col-md-4">
-                    <input id="textinput" name="textinput" placeholder="Insert your Email"
-                           class="form-control input-md" required="" type="email">
+                    {{ form.email }}
                     <span class="help-block"> </span>
                 </div>
             </div>
-            <!-- Text input-->
+
+
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Password</label>
                 <div class="col-md-4">
-                    <input id="textinput" name="textinput" placeholder="Insert your Password"
-                           class="form-control input-md" required="" type="password">
+                    {{ form.password }}
                     <span class="help-block"> </span>
                 </div>
             </div>
-            <!-- Text input-->
+
+
             <div class="form-group">
                 <label class="col-md-4 control-label" for="textinput">Confirm Password</label>
                 <div class="col-md-4">
-                    <input id="textinput" name="textinput" placeholder="Confirm your Password"
-                           class="form-control input-md" required="" type="password">
+                    {{ form.password }}
                     <span class="help-block"> </span>
                 </div>
             </div>
+
             <!-- Button -->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="singlebutton"> </label>
@@ -61,4 +65,7 @@
         </form>
     </div>
 </div>
+<hr>
+
+
 {% endblock content %}
