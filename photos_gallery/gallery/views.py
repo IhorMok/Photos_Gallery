@@ -1,4 +1,8 @@
-from django.shortcuts import render
+import logging
+from django.shortcuts import render, redirect
+from .forms import RegisterUserForm
+
+logger = logging.getLogger(__name__)
 
 
 def index_page(request):
@@ -10,4 +14,14 @@ def about(request):
 
 
 def register_page(request):
-    return render(request, 'gallery/register_page.html')
+    if request.method == 'POST':
+        form = RegisterUserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+        else:
+            logger.warning(form.errors)
+    else:
+        form = RegisterUserForm()
+
+    return render(request, 'gallery/register_page.html', {'form': form})
