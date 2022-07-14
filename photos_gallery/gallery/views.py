@@ -4,6 +4,7 @@ from .forms import RegisterUserForm
 
 logger = logging.getLogger(__name__)
 
+
 def index_page(request):
     return render(request, 'gallery/home.html')
 

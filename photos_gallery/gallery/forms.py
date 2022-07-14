@@ -11,7 +11,7 @@ class RegisterUserForm(UserCreationForm):
         required=True,
         widget=TextInput(
             attrs={
-                'class': 'form-control input-md', 
+                'class': 'form-control input-md',
                 'placeholder': 'Write your First Name'
             }
         )
@@ -19,7 +19,7 @@ class RegisterUserForm(UserCreationForm):
     last_name = CharField(
         widget=TextInput(
             attrs={
-                'class': 'form-control input-md', 
+                'class': 'form-control input-md',
                 'placeholder': 'Write your Last Name'
             }
         )
@@ -27,24 +27,24 @@ class RegisterUserForm(UserCreationForm):
     email = EmailField(
         widget=EmailInput(
             attrs={
-                'class': 'form-control', 
+                'class': 'form-control',
                 'placeholder': 'Write Your Email'
-                }
+            }
         )
     )
     password1 = CharField(
         widget=PasswordInput(
             attrs={
-                'class': 'form-control input-md', 
-                'placeholder': 'Write Your Password', 
+                'class': 'form-control input-md',
+                'placeholder': 'Write Your Password',
             }
         )
     )
     password2 = CharField(
         widget=PasswordInput(
             attrs={
-                'class': 'form-control input-md', 
-                'placeholder': 'Confirm Password', 
+                'class': 'form-control input-md',
+                'placeholder': 'Confirm Password',
             }
         )
     )
