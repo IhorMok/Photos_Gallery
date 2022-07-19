@@ -1,6 +1,7 @@
+import logging
 from django.contrib.auth.backends import BaseBackend
-from photos_gallery.gallery.models import User
 from django.contrib.auth.hashers import check_password
+from gallery.models import User
 
 
 # 1 Find user by email
@@ -20,10 +21,8 @@ class AuthBackend(BaseBackend):
         #         return user
         # return None
         user = User.objects.get(email=email)
-        if user is not None and user.check_password(password):
-            if user.is_active:
-                return user
-            else:
-                return "User is not activated"
+        logging.info(user)
+        if user is not None and check_password(password, user.password):
+            return user
         else:
             return None
