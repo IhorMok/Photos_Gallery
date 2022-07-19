@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 
 from django.forms import TextInput, EmailInput, PasswordInput, EmailField, CharField
 
-from gallery.models import User
+from .models import User
 
 
 class RegisterUserForm(UserCreationForm):

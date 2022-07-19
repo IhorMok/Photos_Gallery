@@ -1,3 +1,4 @@
+from django.contrib.auth.hashers import make_password
 from django.db import models
 
 
@@ -12,7 +13,7 @@ class User(models.Model):
     USERNAME_FIELD = 'email'
 
     def set_password(self, raw_password):
-        self.password = raw_password
+        self.password = make_password(raw_password)
 
     def __str__(self):
         return self.first_name
