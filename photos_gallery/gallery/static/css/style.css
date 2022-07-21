@@ -2,6 +2,9 @@
   max-width: 1200px;
 }
 
+nav {
+    background-color: orange;
+}
 /*
  * Custom translucent site header
  */

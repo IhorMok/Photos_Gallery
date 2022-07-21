@@ -1,5 +1,5 @@
 import logging
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render, redirect
 from .forms import RegisterUserForm
 
@@ -40,3 +40,8 @@ def login_user(request):
             return redirect('login')
     else:
         return render(request, 'gallery/login.html', {})
+
+
+def logout_user(request):
+    logout(request)
+    return redirect('index')

@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
 
 
-    <title>Photos Gallery</title>
+    <title>{% block title %}Photos Gallery{% endblock title %}</title>
 </head>
 
 
@@ -39,11 +39,17 @@
         <a class="py-2 d-none d-md-inline-block" href="#">Add Photo</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Albums</a>
         <a class="py-2 d-none d-md-inline-block" href="{% url 'about' %}">About us</a>
-        <a class="py-2" href="#">
-            <img class="logo_" src="https://www.w3schools.com/images/w3schools_green.jpg" title="IMAGE_TEST_NAME">
-        </a>
-        <a class="own" href="{% url 'login' %}">Sign In / </a>
-        <a class="own" href="{% url 'register' %}">Register</a>
+<!--        <a class="py-2" href="#">-->
+<!--            <img class="logo_" src="https://www.w3schools.com/images/w3schools_green.jpg" title="IMAGE_TEST_NAME">-->
+<!--        </a>-->
+
+            {% if user.is_authenticated %}
+        <span class="py-2 d-none d-md-inline-block"> Hi, {{ user }}!</span>
+                <a class="py-2 d-none d-md-inline-block" href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+                <p>You are not logged in</p>
+                <a href="{% url 'login' %}">Log In</a>
+            {% endif %}
     </nav>
 </header>
 <body>
