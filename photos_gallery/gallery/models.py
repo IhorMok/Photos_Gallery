@@ -16,5 +16,9 @@ class User(models.Model):
     def set_password(self, raw_password):
         self.password = make_password(raw_password)
 
+    @property
+    def is_authenticated(self):
+        return True
+
     def __str__(self):
         return self.first_name

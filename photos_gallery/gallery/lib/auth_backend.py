@@ -12,3 +12,10 @@ class AuthBackend(BaseBackend):
             return user
         else:
             return None
+
+    def get_user(self, user_id):
+        try:
+            user = User._default_manager.get(pk=user_id)
+        except User.DoesNotExist:
+            return None
+        return user
