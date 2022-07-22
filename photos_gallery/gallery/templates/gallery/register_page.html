@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
         <h2>Create Your Profile</h2>
-        <form class="form-horizontal" method="post">
+        <form class="form-horizontal" action="{% url 'register' %}" method="post">
             {% csrf_token %}
             {% if form.errors %}
                 <div class="alert alert-danger alert-dismissible" role="alert">
@@ -72,6 +72,5 @@
     </div>
 </div>
 <hr>
-
 
 {% endblock content %}
