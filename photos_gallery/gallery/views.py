@@ -19,7 +19,7 @@ def register_page(request):
         form = RegisterUserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('login')
         else:
             logger.warning(form.errors)
     else:
