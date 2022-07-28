@@ -22,3 +22,9 @@ class User(models.Model):
 
     def __str__(self):
         return self.first_name
+
+
+class Album(models.Model):
+    name = models.CharField(max_length=128)
+    public = models.BooleanField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
