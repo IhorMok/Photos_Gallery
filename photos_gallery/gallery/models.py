@@ -28,3 +28,9 @@ class Album(models.Model):
     name = models.CharField(max_length=128)
     public = models.BooleanField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+class Picture(models.Model):
+    title = models.CharField(max_length=128)
+    image = models.ImageField(upload_to="picture/%Y/%m/%d/")
+    album = models.ForeignKey(Album, on_delete=models.CASCADE)
