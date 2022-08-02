@@ -1,0 +1,18 @@
+{% extends "gallery/home.html" %}
+{% block title %}User Page{% endblock title %}
+{% block content %}
+
+<h2 class="text-my">Welcome, {{ user.first_name }} {{ user.last_name}}</h2>
+
+<div class="container center">
+    <div class="info">
+        <h2>Welcome!</h2>
+        <h3>This is your personal page! You can find your album and uploaded photos. To start:</h3>
+        <p>1.Create an album</p>
+        <p>2.Upload photos</p>
+        <p>3.Set album's visibility</p>
+        <div class="butt"><a class="btn btn-primary" href="#" role="button">Create Album</a></div>
+    </div>
+
+</div>
+{% endblock %}
