@@ -44,6 +44,20 @@ img.logo_ {
     margin-right: 20px;
 }
 
+/*page-user*/
+.text-my {
+    margin: 20px 40px;
+}
+.container.center {
+    border: solid 2px rgb(214,214,214);
+    background-color: rgb(245,245,245);
+    margin-top: 50px;
+    padding: 20px 40px 20px 50px;
+}
+.butt {
+    text-align: center;
+    width: 100%;
+}
 
 /*Footer*/
 .p-2 {
