@@ -29,6 +29,9 @@ class Album(models.Model):
     public = models.BooleanField()
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
+
 
 class Picture(models.Model):
     title = models.CharField(max_length=128)

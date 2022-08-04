@@ -1,5 +1,5 @@
 {% extends "gallery/home.html" %}
-{% block title %}User Page{% endblock title %}
+{% block title %}Hi, {{user.first_name }}!{% endblock title %}
 {% block content %}
 
 <h2 class="text-my">Welcome, {{ user.first_name }} {{ user.last_name}}</h2>
@@ -11,7 +11,7 @@
         <p>1.Create an album</p>
         <p>2.Upload photos</p>
         <p>3.Set album's visibility</p>
-        <div class="butt"><a class="btn btn-primary" href="#" role="button">Create Album</a></div>
+        <div class="butt"><a class="btn btn-primary" href="{% url 'create_album' %}" role="button">Create Album</a></div>
     </div>
 
 </div>
