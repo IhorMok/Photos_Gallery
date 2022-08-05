@@ -1,0 +1,31 @@
+{% extends "gallery/home.html" %}
+{% block title %}Create Album{% endblock title %}
+{% block content %}
+
+<div>
+    <h2 class="my-class">New Album</h2>
+    <div class="container center album">
+        <div>
+            <form action="{% url 'create_album' %}" method="post" id="forma">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="textinput">Album Name:</label>
+                    <div class="col-md-4">
+                        {{ album_form.name }}
+                    </div>
+                    <span class="help-block">Album name must be unique and longer than 2 chars</span>
+                </div>
+                <div>
+                    <input type="checkbox" id="check" name="public">
+                    <label for="check">public</label>
+                    <div class="col-xl-2 my-buttons">
+                        <a href="{% url 'index' %}" id="reset" name="reset" class="btn btn-light">Cancel</a>
+                        <button id="singlebutton" name="singlebutton" class="btn btn-primary" type="submit">Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

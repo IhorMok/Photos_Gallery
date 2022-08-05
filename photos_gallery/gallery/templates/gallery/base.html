@@ -18,8 +18,10 @@
 
     <link rel="shortcut icon" type="image/png" href="/static/favicon.ico"/>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/brands.css" integrity="sha384-IiIL1/ODJBRTrDTFk/pW8j0DUI5/z9m1KYsTm/RjZTNV8RHLGZXkUDwgRRbbQ+Jh" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/brands.css"
+          integrity="sha384-IiIL1/ODJBRTrDTFk/pW8j0DUI5/z9m1KYsTm/RjZTNV8RHLGZXkUDwgRRbbQ+Jh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css"
+          integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
 
 
     <title>{% block title %}Photos Gallery{% endblock title %}</title>
@@ -35,19 +37,20 @@
                 <circle cx="12" cy="12" r="10"/>
             </svg>
         </a>
+
         <a class="py-2 d-none d-md-inline-block" href="{% url 'index' %}">Home</a>
-        <a class="py-2 d-none d-md-inline-block" href="{% url 'page_user' %}">Add Photo</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Albums</a>
+        <a class="py-2 d-none d-md-inline-block" href="#">Add Photo</a>
+        <a class="py-2 d-none d-md-inline-block" href="{% url 'create_album' %}">Albums</a>
         <a class="py-2 d-none d-md-inline-block" href="{% url 'about' %}">About us</a>
 
-            {% if user.is_authenticated %}
-                <span class="py-2 d-none d-md-inline-block"> Hi, {{ user }}!</span>
-                <a class="py-2 d-none d-md-inline-block" href="{% url 'logout' %}">Log Out</a>
-            {% else %}
-                <p>You are not logged in</p>
-                <a href="{% url 'login' %}">Log In</a>
-                <a href="{% url 'register' %}">Register</a>
-            {% endif %}
+        {% if user.is_authenticated %}
+        <span class="py-2 d-none d-md-inline-block"> <a href="{% url 'page_user' %}">Hi, {{ user }}!</a></span>
+        <a class="py-2 d-none d-md-inline-block" href="{% url 'logout' %}">Log Out</a>
+        {% else %}
+        <p>You are not logged in</p>
+        <a href="{% url 'login' %}">Log In</a>
+        <a href="{% url 'register' %}">Register</a>
+        {% endif %}
     </nav>
 </header>
 

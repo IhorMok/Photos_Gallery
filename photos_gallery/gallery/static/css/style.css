@@ -58,6 +58,34 @@ img.logo_ {
     text-align: center;
     width: 100%;
 }
+/*create-album*/
+.my-class {
+    text-align: center;
+    margin-top: 20px;
+}
+.container.center.album{
+    margin-top: 25px;
+}
+input#id_name.control-label {
+    border: solid 0.5px rgb(199,199,199);
+    border-radius: 4px;
+    outline: 0;
+}
+.help-block {
+    font-size: 13px;
+    color: rgb(178,178,178);
+}
+
+/*button create-album*/
+.my-buttons {
+    float: right;
+}
+.btn-light {
+    background-color: rgb(218, 218, 218);
+}
+.btn-light:hover {
+    background-color: rgb(171, 171, 171);
+}
 
 /*Footer*/
 .p-2 {

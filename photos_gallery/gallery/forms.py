@@ -1,9 +1,9 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-from django.forms import TextInput, EmailInput, PasswordInput, EmailField, CharField
+from django.forms import TextInput, EmailInput, PasswordInput, EmailField, CharField, CheckboxInput, BooleanField
 
-from .models import User
+from .models import User, Album
 
 
 class RegisterUserForm(UserCreationForm):
@@ -59,3 +59,25 @@ class RegisterUserForm(UserCreationForm):
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'email', 'password1', 'password2']
+
+
+class AlbumForm(forms.ModelForm):
+    name = CharField(
+        widget=TextInput(
+            attrs={
+                'class': 'control-label',
+                'placeholder': 'Write your album name',
+            }
+        )
+    )
+    public = BooleanField(required=False,
+        widget=CheckboxInput(
+            attrs={
+                'class': 'control-label',
+            }
+        )
+    )
+
+    class Meta:
+        model = Album
+        fields = ['name', 'public']
